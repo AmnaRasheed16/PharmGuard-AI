@@ -17,10 +17,14 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Allow frontend dev server (covers all Vite ports)
+# Allow frontend dev server and Vercel production domain
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176", "http://localhost:3000", "http://localhost:1573"],
+    allow_origins=[
+        "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176", "http://localhost:3000", "http://localhost:1573",
+        "https://pharmaguard-backend.vercel.app",
+        "https://*.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

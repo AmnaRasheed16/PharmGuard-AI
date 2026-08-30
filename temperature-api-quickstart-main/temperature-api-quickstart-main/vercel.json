@@ -1,14 +1,42 @@
 {
+<<<<<<< HEAD
   "builds": [
     {
       "src": "backend/main.py",
       "use": "@vercel/python"
+=======
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/vercel_app.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.11",
+        "maxDuration": 30
+      }
+>>>>>>> 35c5543 (Remove node_modules from frontend)
     }
   ],
   "routes": [
     {
+<<<<<<< HEAD
       "src": "/(.*)",
       "dest": "backend/main.py"
+=======
+      "src": "/api/(.*)",
+      "dest": "/backend/vercel_app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/$1"
+>>>>>>> 35c5543 (Remove node_modules from frontend)
     }
   ]
 }
