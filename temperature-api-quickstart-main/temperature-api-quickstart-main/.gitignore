@@ -1,0 +1,38 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Build
+dist/
+**/dist/
+
+# Vercel
+.vercel/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
