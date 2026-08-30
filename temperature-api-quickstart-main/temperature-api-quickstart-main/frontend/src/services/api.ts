@@ -4,6 +4,12 @@ const BASE = (
   "https://pharm-guard-ai-rgqe.vercel.app/api"
 ).replace(/\/$/, "");
 
+type HealthResponse = {
+  status: string;
+  fortyguard_status: string;
+  version: string;
+};
+
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
     headers: { 'Content-Type': 'application/json' },
@@ -21,7 +27,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  getHealth: () => request("/health"),
+  getHealth: () => request<HealthResponse>("/health"),
 
   planRoute: (payload: any) =>
     request<any>('/routes/plan', { method: 'POST', body: JSON.stringify(payload) }),
