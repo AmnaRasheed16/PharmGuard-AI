@@ -1,7 +1,8 @@
 // API service layer for PharmaGuard AI
-const BASE =
-  (import.meta.env.VITE_API_BASE_URL as string | undefined) ||
-  '/api';
+const BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://pharm-guard-ai-rgqe.vercel.app/api"
+).replace(/\/$/, "");
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
@@ -20,7 +21,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  getHealth: () => request<any>('/health'),
+  getHealth: () => request("/health"),
 
   planRoute: (payload: any) =>
     request<any>('/routes/plan', { method: 'POST', body: JSON.stringify(payload) }),
