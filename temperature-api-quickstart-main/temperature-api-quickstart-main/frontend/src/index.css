@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .glass-card {
+    background: rgba(10, 22, 40, 0.75);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    backdrop-filter: blur(10px);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #0f1f3a;
+  --bg-panel: #0a1628;
+  --bg-card: #061428;
+  --border: #1e3056;
+  --cyan: #60a5fa;
+  --cyan-dim: #1d4ed8;
+  --emerald: #22c55e;
+  --amber: #facc15;
+  --rose: #ef4444;
+  --text-1: #FFFFFF;
+  --text-2: #c7d2fe;
+  --input-bg: #0b1a2e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-1);
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+/* ── Primary button — dark cyan fill with mint hover glow ────── */
+.btn-primary {
+  background: var(--cyan-dim);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.35);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Status classes ──────────────────────────────────────────── */
+.status-safe {
+  color: #22c55e;
+}
+
+.status-warning {
+  color: #facc15;
+}
+
+.status-atrisk {
+  color: #f97316;
+}
+
+.status-critical {
+  color: #ef4444;
+}
+
+/* ── Inputs & selects ────────────────────────────────────────── */
+input,
+select {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-1);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.15);
+}
+
+input::placeholder {
+  color: rgba(168, 197, 201, 0.5);
+}
+
+/* ── Labels ──────────────────────────────────────────────────── */
+label {
+  font-size: 0.75rem;
+  color: var(--text-2);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Map filter ──────────────────────────────────────────────── */
+.dark-mode-map {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
