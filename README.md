@@ -7,7 +7,7 @@ PharmaGuard AI is an AI-powered pharmaceutical cold-chain intelligence platform 
 ### 👥 Team Double Trouble
 
 - **Amna Rasheed**
-- **Farah Azeem**
+- **Faraha Azeem**
 
 The platform uses real environmental intelligence from the **FortyGuard tOS Enterprise API** to analyze heat exposure, temperature conditions, worker heat stress, and other environmental risks along pharmaceutical delivery routes.
 
